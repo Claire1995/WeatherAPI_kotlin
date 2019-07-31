@@ -11,15 +11,23 @@ import com.example.weatherapi_kotlin.data.CityData
 class CityListAdapter(context: Context, cityData: ArrayList<CityData>)  //override도 : 으로 표시
     : ArrayAdapter<CityData>(context, R.layout.layout_city_list, cityData){
 
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+    override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val inflater : LayoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         var mainView = convertView
         mainView = mainView?:inflater.inflate(R.layout.layout_city_list, parent, false)
+
         val name : TextView = mainView!!.findViewById(R.id.city_name) as TextView
-//        val data:CityData = getItem(position)
-//        name.text = data.name
-//        mainView.tag = data._id
+
+        val data:CityData = getItem(position)
+            name.text = data.name
+            mainView.tag = data._id
+
+
 
         return mainView!!
+    }
+
+    override fun getItem(position: Int): CityData {
+        return super.getItem(position)!!
     }
 }

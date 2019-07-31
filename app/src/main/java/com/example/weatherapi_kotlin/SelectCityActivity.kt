@@ -24,13 +24,13 @@ class SelectCityActivity : AppCompatActivity() {
         city_list.setOnItemClickListener { adapterView, view, i, l ->
             val text: TextView = view.findViewById(R.id.city_name) as TextView
             saveData(view.tag as String, text.text as String)
-//            setResult(MainActivity.SELECTED_CITY)
+            setResult(MainActivity.SELECTED_CITY)
             finish()
         }
     }
 
     fun saveData(api_id:String, name:String){
-//        val db = DBHandlerAnko(this)
-//        db.saveCity(CityData(api_id, name))
+        val db = DBHandlerAnko(this)
+        db.saveCity(CityData(api_id, name))
     }
 }
