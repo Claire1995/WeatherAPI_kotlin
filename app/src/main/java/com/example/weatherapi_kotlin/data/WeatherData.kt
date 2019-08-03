@@ -2,7 +2,7 @@ package com.example.weatherapi_kotlin.data
 
 import com.google.gson.annotations.SerializedName
 
-data class DayData(val weather: ArrayList<WeatherData>, val main: MainData, val wind: WindData, val clouds: CloudData, val rain: RainData, var cityName: String, var apii_id:String){
+data class DayData(val weather: ArrayList<WeatherData>, val main: MainData, val wind: WindData, val clouds: CloudData, val rain: RainData, var cityName: String, var api_id:String){
     operator fun get(position: Int):WeatherData = weather[position]
 }
 data class WeekData(val list: ArrayList<WeekList>)
