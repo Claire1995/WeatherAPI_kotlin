@@ -12,10 +12,10 @@ import java.net.URL
 
 class ForecastDtaLoader(context: Context, val cities:ArrayList<CityData>)
     :AsyncTaskLoader<ArrayList<WeatherForecast>>(context){
-    val API_KEY:String = ""
-    val Current_URL:String = ""
-    val Forcast_URL = ""
-    val ICON_URL = ""
+    val API_KEY:String = "e4223f90dd0cb611abb2244bd82b937b"
+    val Current_URL:String = "http://api.openweathermap.org/data/2.5/weather?id="
+    val Forcast_URL = "http://api.openweathermap.org/data/2.5/forecast?id="
+    val ICON_URL = "http://openweathermap.org/img/w/"
 
     override fun loadInBackground(): ArrayList<WeatherForecast>? {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
